@@ -13,7 +13,6 @@ module Lita
       end
 
       def chat(payload)
-        Lita.logger.debug "Cleverbot got: #{payload[:message]}"
         message = payload[:message]
         return unless should_reply?(message)
         robot.send_message(message.source, build_response(message))
