@@ -1,7 +1,7 @@
 # lita-cleverbot
 
 [![Build Status](https://travis-ci.org/cristianbica/lita-cleverbot.png?branch=master)](https://travis-ci.org/cristianbica/lita-cleverbot)
-[![Coverage Status](https://coveralls.io/repos/cristianbica/lita-cleverbot/badge.png)](https://coveralls.io/r/cristianbica/lita-cleverbot)
+[![Coverage Status](https://coveralls.io/repos/github/cristianbica/lita-cleverbot/badge.svg?branch=master)](https://coveralls.io/github/cristianbica/lita-cleverbot?branch=master)
 
 This Lita handler will send unhadled messages directed to Lita to Cleverbot and reply with clever messages.
 
