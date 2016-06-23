@@ -14,11 +14,14 @@ module Lita
 
       def chat(payload)
         message = payload[:message]
-        return unless should_reply?(message)
-        robot.send_message(message.source, build_response(message))
+        reply(message) if should_reply?(message)
       end
 
       private
+
+      def reply(message)
+        message.reply build_response(message)
+      end
 
       def should_reply?(message)
         message.command? || message.body =~ /#{aliases.join('|')}/i
