@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "lita-cleverbot"
-  spec.version       = "1.0.0"
+  spec.version       = "1.0.1"
   spec.authors       = ["Cristian Bica"]
   spec.email         = ["cristian.bica@gmail.com"]
   spec.description   = "Lita AI via cleverbot.io"

@@ -24,7 +24,19 @@ module Lita
       end
 
       def should_reply?(message)
-        message.command? || message.body =~ /#{aliases.join('|')}/i
+        !sent_by_robot?(message) && ( command?(message) || robot_mentioned?(message) )
+      end
+
+      def command?(message)
+        message.command?
+      end
+
+      def sent_by_robot?(message)
+        message.user.mention_name == robot.mention_name
+      end
+
+      def robot_mentioned?(message)
+        message.body =~ /#{aliases.join('|')}/i
       end
 
       def build_response(message)

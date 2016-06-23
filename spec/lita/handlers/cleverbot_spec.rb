@@ -29,6 +29,12 @@ describe Lita::Handlers::Cleverbot, lita: true, lita_handler: true, additional_l
       send_message("test", from: room)
     end
 
+    it "shouldn't reply to messages sent by the bot" do
+      expect_any_instance_of(Lita::Handlers::Cleverbot).to receive(:reply).never
+      robot_user = Lita::User.new(100, name: robot.mention_name)
+      send_message("Lita: test", as: robot_user, from: room)
+    end
+
     it "should try to reply to messages addressed to the robot" do
       expect_any_instance_of(Lita::Handlers::Cleverbot).to receive(:reply).once
       send_message("hey Lita, who am I?", from: room)
